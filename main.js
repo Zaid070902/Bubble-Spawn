@@ -40,13 +40,12 @@ setInterval(function spawn(event) {
   let bubble = document.createElement("div");
   bubble.classList.add("bubble");
   bubble.setAttribute("onclick", "event");
-  bubble.addEventListener("click", despawn);
+  bubble.addEventListener("pointerdown", despawn);
 
   body.appendChild(bubble);
 
   let audio = document.querySelector("audio");
   function despawn(event) {
-    audio.play();
     bubble.remove();
   }
 
