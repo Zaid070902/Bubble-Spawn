@@ -1,0 +1,27 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(300deg, rgb(0, 0, 50), rgb(30, 0, 50));
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bubble {
+  border-radius: 50%;
+  position: absolute;
+  animation: faze 2s;
+}
+
+@keyframes faze {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
