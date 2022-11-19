@@ -3,9 +3,9 @@ let body = document.querySelector("body");
 let sizes = ["30px", "50px", "80px", "100px", "150px"];
 
 let colors = [
-  "rgba(225, 225, 225, 0.3)",
-  "rgba(225, 225, 225, 0.2)",
-  "rgba(225, 225, 225, 0.1)",
+  "rgba(0, 200, 200, 0.3)",
+  "rgba(0, 150, 150, 0.2)",
+  "rgba(0, 0, 0, 0.5)",
 ];
 
 let color = colors[randomColor()];
@@ -50,7 +50,6 @@ setInterval(function spawn(event) {
   }
 
   let bubbles = document.querySelectorAll(".bubble");
-  console.log(randomPlace());
 
   for (let i = 0; i < bubbles.length; i++) {
     bubbles[i].style.top = `${randomPlace()}%`;
@@ -60,5 +59,4 @@ setInterval(function spawn(event) {
     bubbles[i].style.padding = sizes[bubbleSize()];
     bubbles[i].style.backgroundColor = colors[randomColor()];
   }
-  console.log(speed[randomSpeed()]);
 }, 5000);

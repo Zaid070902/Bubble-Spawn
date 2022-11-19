@@ -5,9 +5,19 @@
 }
 
 body {
-  background-image: linear-gradient(300deg, rgb(0, 0, 50), rgb(30, 0, 50));
   height: 100vh;
   overflow: hidden;
+  animation: move 20s infinite alternate;
+}
+
+@keyframes move {
+  0% {
+    background-color: #111;
+  }
+
+  100% {
+    background-color: rgb(0, 100, 100);
+  }
 }
 
 .bubble {
