@@ -2,18 +2,9 @@ let body = document.querySelector("body");
 
 let sizes = ["30px", "50px", "80px", "100px", "150px"];
 
-let colors = [
-  "rgba(0, 200, 200, 0.3)",
-  "rgba(0, 150, 150, 0.2)",
-  "rgba(0, 0, 0, 0.5)",
-];
+let speed = [5, 6, 7, 8, 9, 10];
 
-let color = colors[randomColor()];
-
-function randomColor(event) {
-  let ranColor = Math.random() * colors.length;
-  return Math.floor(ranColor);
-}
+let randomSize = sizes[bubbleSize()];
 
 function randomPlace(event) {
   let ranPlaceLeft = Math.random() * 90;
@@ -22,14 +13,10 @@ function randomPlace(event) {
   return Math.floor(ranPlaceLeft, ranPlaceRight);
 }
 
-let randomSize = sizes[bubbleSize()];
-
 function bubbleSize(event) {
   let ran = Math.random() * sizes.length;
   return Math.floor(ran);
 }
-
-let speed = [5, 6, 7, 8, 9, 10];
 
 function randomSpeed(event) {
   let ranSpeed = Math.random() * speed.length;
@@ -50,6 +37,7 @@ setInterval(function spawn(event) {
   }
 
   let bubbles = document.querySelectorAll(".bubble");
+  console.log(randomPlace());
 
   for (let i = 0; i < bubbles.length; i++) {
     bubbles[i].style.top = `${randomPlace()}%`;
@@ -57,6 +45,8 @@ setInterval(function spawn(event) {
     bubbles[i].style.transform = `translate(${randomPlace()},${randomPlace()})`;
     bubbles[i].style.transition = `${speed[randomSpeed()]}s`;
     bubbles[i].style.padding = sizes[bubbleSize()];
-    bubbles[i].style.backgroundColor = colors[randomColor()];
+    bubbles[i].style.backgroundColor = "rgba(0, 200, 200, 0.1)";
+    bubbles[i].style.boxShadow = "cyan 1px 0px 10px inset";
   }
-}, 5000);
+  console.log(speed[randomSpeed()]);
+}, 1500);
